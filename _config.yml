@@ -1,11 +1,11 @@
 # Site settings
-author: JOSHUA BRANCAZIO
-title: 
+author: Joshua Brancazio
+title: From Espresso Shots to Data Plots
 header-img: img/home-bg.png
 email: joshua.brancazio@gmail.com
-copyright_name: JOSHUA BRANCAZIO
+copyright_name: Joshua Brancazio
 description: > # this means to ignore newlines until "baseurl:"
-  
+  Seeing the world through data-colored glasses
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: 
 github_username:  Jbrancazio
