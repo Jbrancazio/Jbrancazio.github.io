@@ -7,7 +7,7 @@ copyright_name: Joshua Brancazio
 description: > # this means to ignore newlines until "baseurl:"
   Seeing the world through data-colored glasses
 baseurl: "" # the subpath of your site, e.g. /blog
-twitter_username: 
+twitter_username: MrBroncosaurus
 github_username:  Jbrancazio
 
 # Build settings
