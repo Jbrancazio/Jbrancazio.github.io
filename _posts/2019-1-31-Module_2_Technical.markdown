@@ -6,6 +6,10 @@ permalink:  the_northwind_database_analysis
 ---
 
 
+from IPython.core.display import HTML
+import urllib2
+HTML(urllib2.urlopen('http://bit.ly/1Bf5Hft').read())
+
 
 # Project 2 - The Northwind Database
 ---
