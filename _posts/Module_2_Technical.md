@@ -1,3 +1,11 @@
+---
+layout: post
+title:      "Project 2 - The Northwind Database"
+date:       2019-1-31 13:01:00 +0000
+permalink:  the_northwind_database_analysis
+---
+
+
 
 # Project 2 - The Northwind Database
 ---
