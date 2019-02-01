@@ -50,19 +50,19 @@ Is the UK or US sales team sell more product? Are men or women more productive? 
 Both regions and all sales members performing equally well
 	•	The t-test comparing the mean sales of the US based sales team (1520.15) vs. the UK based sales team (1538.31) was insignificant. t=0.1257,p=0.899 
 	•	The t-test comparing the mean sales of males (1566.10) vs. females (1504.48) was insignificant. t=0.453,p=0.65 
-	•	The tukey test shows no significance in sales amongst the employees either which would indicate that they are all doing equally well.
+	•	The tukey test shows no significance in sales amongst the employees either which would indicate that they are all doing equally well. 
 
 Is there a difference in the mean number of products sold in a sales categories by region?
 
-	•	The Eastern Region is the strongest, followed by the Western Region in both sales and number of products sold. There is however no leading category.
-	•	The Eastern region sells more product than the other three regions. The Western region also sells more than both the Southern and Northern regions. There is no significant difference between the Southern and Northern regions.
-	•	The Eastern region has more in sales than the other three regions but there is no significant difference between the other regions.
+	•	The Eastern Region is the strongest, followed by the Western Region in both sales and number of products sold. There is however no leading category. 
+	•	The Eastern region sells more product than the other three regions. The Western region also sells more than both the Southern and Northern regions. There is no significant difference between the Southern and Northern regions. 
+	•	The Eastern region has more in sales than the other three regions but there is no significant difference between the other regions. 
 	•	There is no outstanding significant categories in terms of either sales or product. 
 Is there a difference in the number of imports and domestic products that customers purchase and the revenue they create?
-	•	
-	•	Develop relationships with more domestic partners and push domestic suppliers
+	
+	•	Develop relationships with more domestic partners and push domestic suppliers 
 	•	The t-test comparing the mean number of imports sold (40.32) vs. domestic products (44.33) was significant. t=−2.897,p=0.0038 
-	•	The t-test comparing the mean sales of imports (540.59) vs. domestic products (891.64) was significant. t=−4.101, p=5.1699e−05  
+	•	The t-test comparing the mean sales of imports (540.59) vs. domestic products (891.64) was significant. t=−4.101, p=5.1699e−05 
 Do discounts have a statistically significant effect on the number of products customers order? If so, at what level(s) of discount?
 
 Discounts sell more products!
@@ -72,5 +72,5 @@ Discounts sell more products!
 	•	5% discount is significantly different from 0 but 10% is not, while more data could clear up this difference, sticking with a discount of 15% or more will increase the number of items sold. 
 	•	There is no significant difference between the groups of discount levels. 
 
- 
+
 
