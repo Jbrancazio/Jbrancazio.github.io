@@ -5,7 +5,7 @@ date:       2019-1-31 20:44:56 +0000
 permalink:  hypothesis_testing
 ---
 
- > > “There are two possible outcomes: if the result confirms the hypotheses, then you’ve made a measurement. If the result is contrary to the hypothesis, then you’ve made a discovery”
+ >  “There are two possible outcomes: if the result confirms the hypotheses, then you’ve made a measurement. If the result is contrary to the hypothesis, then you’ve made a discovery”
 — Enrico Fermi 
 
 
@@ -27,22 +27,37 @@ After importing the data into a pandas dictionary for easier exploration I decid
 3. Is there a difference in the number of imports and domestic products that customers purchase and the revenue they create?
 4. Do discounts have a statistically significant effect on the number of products customers order? If so, at what level(s) of discount?
 
-### Ask a Question
+## Ask a Question
 
 For each of these questions, I followed the same process. I started by creating my question and null/alternative hypotheses. I then decided which tests and significance value I would use. Doing this step early in the process before any analysis has been completed is a good way to ensure that there is no experimentor bias in the process. 
 
-### Do Background Research
-I then started  importing the data into a DataFrame using a sql query. I found this to be the most straightforward because I could choose the exact columns that I wanted and use JOIN statements across the tables in a succinct manner. While these queries can look intimidating, it is a great way to ensure you get the exact information you need in order to answer your question. 
+## Do Background Research
+I then started importing the data into a DataFrame using a sql query. I found this to be the most straightforward because I could choose the exact columns that I wanted and use JOIN statements across the tables in a succinct manner. While these queries can look intimidating, it is a great way to ensure you get the exact information you need in order to answer your question. 
+
+~~~
+h3 = pd.read_sql_query('''SELECT c.categoryname categories, p.id as product, od.quantity quantity,
+                            r.regiondescription regions, od. unitprice unit_price, od.Discount discount
+                            FROM product p 
+                            JOIN category c ON p.categoryId = c.Id
+                            JOIN orderdetail od ON p.Id = od.productId
+                            JOIN [order] o ON od.OrderId = o.Id
+                            JOIN employee e ON o.EmployeeId = e.Id
+                            JOIN employeeterritory et ON e.Id = et.employeeid
+                            JOIN territory t ON et.territoryId = t.id
+                            JOIN region r ON t.regionId = r.id
+                            ;''', con)
+~~~
 
 I then took an extra step to calculate the total sales number for each product. We were given the number of units purchased, price and discount offered, but it was calculated by line item. In order to find the total sales per product, I multiplied the number of products sold by the price including discount when appropriate. I then grouped the data by the necessary columns to get the information I needed to start graphing the data and running tests. 
 
 The first test I ran was a Levene’s test, which tests for homogeneity of variances. In other words, this test described how likely it is that the two datasets came from the same distribution. This information aided me in determining which additional tests were appropriate to run. 
 
-### Test with an experiment
+## Test with an experiment
+
 I used a variety of tests in order to analyze my data including two-tailed t-tests, Welch’s t-test and Tukey tests. For all of these tests I used a significance value of 0.05 and found an array of results. 
 
-### Analyze the data and draw conclusions
-This step is where it all comes together. While it is not the final step, this is what will inform any business decisions as well as andy future necessary testing. It is important during this step to be be mindful of what the data is truly telling us when drawing conclusions, as it is easy to make false assumptions or make a decision that is not entirely correct. There is always the possibility that there are hidden influences that are muddling your results. 
+## Analyze the data and draw conclusions
+This step is where it all comes together. While it is not the final step, this is what will inform any business decisions as well as any future necessary testing. It is important during this step to be be mindful of what the data is truly telling us when drawing conclusions, as it is easy to make false assumptions or make a decision that is not entirely correct. There is always the possibility that there are hidden influences that are muddling your results. 
 
 The findings of my analysis are summarized below, as well as my ultimate recommendations for northwind trading co. moving forward. 
 
@@ -59,7 +74,8 @@ I first used a Tukey test to compare the regions with each other. This found tha
 The t-test comparing the mean number of imports sold (40.32) vs. domestic products (44.33) was significant with t=−2.897 and p=0.0038. The t-test comparing the mean sales of imports (540.59) vs. domestic products (891.64) was also significant with t=−4.101 and p=5.1699e−05. 
 
 **Do discounts have a statistically significant effect on the number of products customers order? If so, at what level(s) of discount?**
- Using Welch's t-test, we can see that there is a significant difference between the mean products sold when there was no discount offered (21.7) and any amount of discount offered (27.1) with t=−6.23 and p=5.65641429e−10. Using a Tukey test, we can further explore that 15% , 20%, and 25% means are significantly different from the mean products sold with no discounts. 5% discount is significantly different from 0 but 10% is not. There is no significant difference between the groups of discount levels.
+
+Using Welch's t-test, we can see that there is a significant difference between the mean products sold when there was no discount offered (21.7) and any amount of discount offered (27.1) with t=−6.23 and p=5.65641429e−10. Using a Tukey test, we can further explore that 15% , 20%, and 25% means are significantly different from the mean products sold with no discounts. 5% discount is significantly different from 0 but 10% is not. There is no significant difference between the groups of discount levels.
  
  ### Final Conclusions
  
