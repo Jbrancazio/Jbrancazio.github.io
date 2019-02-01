@@ -63,17 +63,25 @@ The findings of my analysis are summarized below, as well as my ultimate recomme
 
 **Is the UK or US sales team sell more product? Are men or women more productive? Who is the top Sales Person?**
 
+![Violin plot of sales by region and gender](img/H2_northwind.png)
+
 I found that both regions and all sales members performed equally well. The two-tailed t-test comparing the mean sales of the US based sales team (1520.15) vs. the UK based sales team (1538.31) was insignificant with t=0.1257 and p=0.899. I then compared the mean sales of of males (1566.10) vs. females (1504.48) and found that also was insignificant with t=0.453 and p=0.65. After these tests I used a Tukey test to compare all nine employees with each other. There was no significance in sales amongst the employees. 
 
 **Is there a difference in the mean number of products sold in a sales categories by region?**
+
+![Box plot of category of products sold by region](img/H3_northwind.png)
 
 I first used a Tukey test to compare the regions with each other. This found that the Eastern region sells more product than the other three regions, and the Western region also sells more than both the Southern and Northern regions. There is however no significant difference between the Southern and Northern regions. I ran the same test for sales and found that only the Eastern region has more in sales than the other three regions. After this I ran a test comparing sales categories with each other and found no significant results. 
 
 **Is there a difference in the number of imports and domestic products that customers purchase and the revenue they create?**
 
+![Violin plot of sales by region split by whether they are imported or domestic](img/H4_northwind.png)
+
 The t-test comparing the mean number of imports sold (40.32) vs. domestic products (44.33) was significant with t=−2.897 and p=0.0038. The t-test comparing the mean sales of imports (540.59) vs. domestic products (891.64) was also significant with t=−4.101 and p=5.1699e−05. 
 
 **Do discounts have a statistically significant effect on the number of products customers order? If so, at what level(s) of discount?**
+
+![Violin plot of discount distribution by level of discount](img/H1_northwind.png)
 
 Using Welch's t-test, we can see that there is a significant difference between the mean products sold when there was no discount offered (21.7) and any amount of discount offered (27.1) with t=−6.23 and p=5.65641429e−10. Using a Tukey test, we can further explore that 15% , 20%, and 25% means are significantly different from the mean products sold with no discounts. 5% discount is significantly different from 0 but 10% is not. There is no significant difference between the groups of discount levels.
  
