@@ -1,10 +1,10 @@
 ---
 layout: post
-title:      “Hypothesis Testing - Northwind Trading Co.”
+title:      Hypothesis Testing - Northwind Trading Co.
 date:       2019-1-31 20:44:56 +0000
 permalink:  hypothesis_testing
 ---
- >  “There are two possible outcomes: if the result confirms the hypotheses, then you’ve made a measurement. If the result is contrary to the hypothesis, then you’ve made a discovery”
+>  “There are two possible outcomes: if the result confirms the hypotheses, then you’ve made a measurement. If the result is contrary to the hypothesis, then you’ve made a discovery”
 — Enrico Fermi 
 
 
