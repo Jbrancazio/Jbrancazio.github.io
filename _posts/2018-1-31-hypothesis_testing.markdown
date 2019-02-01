@@ -4,7 +4,6 @@ title:      “Hypothesis Testing - Northwind Trading Co.”
 date:       2019-1-31 20:44:56 +0000
 permalink:  hypothesis_testing
 ---
-
  >  “There are two possible outcomes: if the result confirms the hypotheses, then you’ve made a measurement. If the result is contrary to the hypothesis, then you’ve made a discovery”
 — Enrico Fermi 
 
@@ -85,7 +84,7 @@ The t-test comparing the mean number of imports sold (40.32) vs. domestic produc
 
 Using Welch's t-test, we can see that there is a significant difference between the mean products sold when there was no discount offered (21.7) and any amount of discount offered (27.1) with t=−6.23 and p=5.65641429e−10. Using a Tukey test, we can further explore that 15% , 20%, and 25% means are significantly different from the mean products sold with no discounts. 5% discount is significantly different from 0 but 10% is not. There is no significant difference between the groups of discount levels.
  
- ### Final Conclusions
+## Final Conclusions
  
  These tests led me to these final conclusions.
  * Develop relationships with more domestic partners and push domestic suppliers
