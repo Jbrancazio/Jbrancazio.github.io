@@ -5,7 +5,7 @@ date:       2019-2-25 11:11:45 +0000
 permalink:  classification_model
 ---
 
->Classification uses a model of inputs to accurately predict the value of one or more outcomes. These outcomes are labels in a dataset and can either be binary or multi-categorical. 
+> Classification uses a model of inputs to accurately predict the value of one or more outcomes. These outcomes are labels in a dataset and can either be binary or multi-categorical. 
 
 
 There are multiple ways to organize a data project but one of the most straight forward processes is to use OSMIN. I will use this process to develop a model using marketing bank data maintained by [UCI](//archive.ics.uci.edu/ml/datasets/bank+marketing#), to predict whether or not a customer will subscribe to Term Deposit. My technical jupyter notebook can be found on my [GitHub](). 
