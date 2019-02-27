@@ -66,7 +66,7 @@ param_grid = {
 grid_clf = GridSearchCV(clf_xgb, param_grid, scoring='roc_auc', cv=5, n_jobs=1)
 grid_clf.fit(X_train_resampled, y_train_resampled)
 ~~~
-This resulted in an increase of my testing accuracy and AUC <sub><sup>(Accuracy:95.97%, AUC: 0.96, F1: 0.9584)</sub></sup> as well as my training accuracy and AUC. There was however a decrease of my training F1 score <sub><sup>(Accuracy:89.32%, AUC: 0.74, F1: 0.3807)</sub></sup>.
+This resulted in an increase of my testing accuracy and AUC <sub><sup>(Accuracy:95.97%, AUC: 0.96, F1: 0.9584)</sup></sub> as well as my training accuracy and AUC. There was however a decrease of my training F1 score <sub><sup>(Accuracy:89.32%, AUC: 0.74, F1: 0.3807)</sup></sub>.
 
 From here I decided to continue tuning my parameters. I picked two more parameters I wanted to tune and  kept the last two constant. 
 ~~~
@@ -82,7 +82,7 @@ param_grid = {
 grid_clf = GridSearchCV(clf_xgb, param_grid, scoring='roc_auc', cv=5, n_jobs=1)
 grid_clf.fit(X_train_resampled, y_train_resampled)
 ~~~
-This resulted in another increase of my training scores <sub><sup>(Accuracy:96.17%, AUC: 0.96, F1: 0.9605)</sub></sup> but actually a decrease in my testing scores <sub><sup>(Accuracy:89.28%, AUC: 0.74, F1: 0.3765)</sub></sup>. This is where I started to suspect that I was over-fitting my model.
+This resulted in another increase of my training scores <sub><sup>(Accuracy:96.17%, AUC: 0.96, F1: 0.9605)</sup></sub> but actually a decrease in my testing scores <sub><sup>(Accuracy:89.28%, AUC: 0.74, F1: 0.3765)</sup></sub>. This is where I started to suspect that I was over-fitting my model.
 
 Despite my suspicions I decided to try to tune my model one more time using the following parameters.
 ~~~
@@ -100,7 +100,7 @@ param_grid = {
 grid_clf = GridSearchCV(clf_xgb, param_grid, scoring='roc_auc', cv=5, n_jobs=1)
 grid_clf.fit(X_train_resampled, y_train_resampled)
 ~~~
-This resulted in another increase of my training scores <sub><sup>(Accuracy:96.55%, AUC: 0.97, F1: 0.9646)</sub></sup> but acnother decrease in my testing scores <sub><sup>(Accuracy:88.86%, AUC: 0.72, F1: 36.75)</sub></sup>. This is where I started to suspect that I was over-fitting my model.
+This resulted in another increase of my training scores <sub><sup>(Accuracy:96.55%, AUC: 0.97, F1: 0.9646)</sup></sub> but acnother decrease in my testing scores <sub><sup>(Accuracy:88.86%, AUC: 0.72, F1: 36.75)</sup></sub>. This is where I started to suspect that I was over-fitting my model.
 
 
 At this point I had a final model that I was happy with in terms of my modeling ability so I decided to graph my ROC Curve and see if I could figure out what was going on. 
