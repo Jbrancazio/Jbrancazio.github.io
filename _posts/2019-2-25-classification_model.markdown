@@ -40,7 +40,16 @@ One of the important aspects of following the OSMIN process is that it is a flui
 
 ## Exploratory Data Analysis
 
-In my mind, this step is more important than actually modeling because it is the work here that will help give you an understanding of the data that will allow you to interpret the results. 
+In my mind, this step is more important than actually modeling because it is the work here that will help give you an understanding of the data that will allow you to interpret the results. I started this process by creating simple histograms and count plots of the features in order to get an idea of what the data looks like. 
+
+While the histograms gave me a decent understanding of the breakdown of the data, I did not find that the count plots helped much more than proving that our dataset was imbalanced.
+
+I decided to create a loop to group all the categorical data but the feature and average the y-values. While there is no meaning to these numbers in terms of the data, it does give me the ability to compare categories in an interesting way. A higher average value means that that category has a greater ration of term deposits compared to no. Doing this shows that stdents are more likely to subscribe to term deposits, as  are individuals who are contacted in march, september, october and december. While these graphs do not show if this is meaningful, it is a great starting point to understand our data. 
+![Graph of average y value by job type](img/student_mod_3.png)
+![Graph of average y value by month](img/month_mod3.png)
+
+I also always like to finish this process with a graph of correlations which allows me to test ffor multicollinearity in an interesting way. 
+![Correlation matrix for features](img/corr_mod3.png)
 
 ## Model
 
@@ -113,7 +122,31 @@ For this model, I will used PCA to reduce the dimensionality but retain 80% of t
 ![ROC Curve of Training and Testing Predicitons for Model 2](img/ROC_Model_2.png)
 As you can see from the graph above, the AUC decrease a little for the training data but increase for the testing data. Using the same points we used before. For a 95% true positive rate in the training data we actually see a decrease to only a 6% false positive rate. When it comes to testing the data, for a 50% true positive rate we see a decrease to 21% false positive rate.
 
-Because we made progress using this method, I decided to retune my parameters to see if I can improved the ROC_AUC for my testing data.
+Because we made progress using this method, I decided to retune my parameters to see if I can improved the ROC_AUC for my testing data. This tuning process gave me my best and final model although it still only gave me a test AUC of 0.673.
+~~~
+final_pipe_xgb = Pipeline([('pca', PCA(n_components=27)),
+        ('clf', xgb.XGBClassifier(gamma=0.1, learning_rate=0.1, 
+                                  max_depth=6, min_child_weight=6,
+                                  n_estimators=500, subsample=0.8))])
+~~~
+Despite this relatively low test AUC, we see another improvement. For this final model, with a true positive rate of 50%, we will see a 15% false positive rate. 
+![ROC Curve of Training and Testing Predicitons for Model 3](img/ROC_Model_3.png).
 
+## Interpret
+While I was creating this model I have had two questions. The first being, what does this mean, i.e. how do these features fit together? The second question I have been wondering is what would happen if I added duration back into the model. 
 
-<b id="f1">1</b> [Moro et al., 2014] S. Moro, P. Cortez and P. Rita. A Data-Driven Approach to Predict the Success of Bank Telemarketing. Decision Support Systems, Elsevier, 62:22-31, June 2014 [↩](#a1)
+My first question is a little difficult because the demensionality reduction process removes the real life meaning of our features. Because of this I decided to get the imporance features of the XGBoost model without the dimensionality reduction. While this is not a perfect interpretation of the final model, it should give us an idea of what we are working with. 
+
+Using an imporantce type of gain returns a relative contribution of the corresponding feature to the model. Using this metric, it shows that the most important feature is the outcome of the previous campaign followed by if they have a housing loan. Going back to my graphs from the exploratory phase I can further understand that not having a housing loan and success from the previous campaign increase the chance that the candidate will subscribe to a term deposit. 
+![Graph of average y value grouped by poutcome](img/poutcome_mod3.png)
+![Graph of average y value grouped by housing loan](img/housing_mod3.png)
+
+The second question brings be back to the modeling stage as I am trying to understand what adding duration will do to the model. While it is not a prefect prediction, I added duration back into the dataset and ran the final model again. This increased out test data AUC to 0.81 improved our true positive rate of 50% to only retuning 7% false positives. 
+![ROC Curve of Training and Testing Predicitons for Model 3](img/ROC_Model_4.png).
+
+While this is a great improvement, as we have already discussed, we should not use duration for predictions because at the end of the call, the answer is determined and therefore has a biased effect on the outcome. It does however help us increase the AUC of our Model to 0.96 when it comes to modeling our data. 
+
+Further tuning and an increase in real data vs synthetic data should allow us to revisit this model and improve the predictability. 
+
+***
+<sub><sup><b id="f1">1</b> [Moro et al., 2014] S. Moro, P. Cortez and P. Rita. A Data-Driven Approach to Predict the Success of Bank Telemarketing. Decision Support Systems, Elsevier, 62:22-31, June 2014 [↩](#a1)</sup></sub>
