@@ -54,16 +54,16 @@ The code can be found in the EDA jupyter notebook but the resulting graphs and f
 As you can see, there is a much larger amount of five star reviews than any other category. This will naturally skew the data a little towards the 5 star reviews due to the large number of samples, as well as splitting by stars given, we can over come this. 
 
 #### Is there a difference in language used based on the number of stars given? 
-![Polarity by number of stars](https://github.com/Jbrancazio/Yelp_Business_Analysis/tree/master/images/Yelp/FE_violinplot_polarity.png)
-![subjectivity by number of stars](https://github.com/Jbrancazio/Yelp_Business_Analysis/tree/master/images/Yelp/FE_violinplot_subjectivity.png)
-![Non-stopwords Percentage by number of stars](https://github.com/Jbrancazio/Yelp_Business_Analysis/tree/master/images/Yelp/FE_violinplot_non_stop_percent.png)
+![Polarity by number of stars](https://github.com/Jbrancazio/Yelp_Business_Analysis/blob/master/images/Yelp/FE_violinplot_polarity.png)
+![subjectivity by number of stars](https://github.com/Jbrancazio/Yelp_Business_Analysis/blob/master/images/Yelp/FE_violinplot_subjectivity.png)
+![Non-stopwords Percentage by number of stars](https://github.com/Jbrancazio/Yelp_Business_Analysis/blob/master/images/Yelp/FE_violinplot_non_stop_percent.png)
 
 As you can see, there is some variance in the Polarity, Subjectitity and Percentage of Non-stopwords between the different stars. It seems that as the number of stars given increases, the polarity and subjectivity increase but the percentage of Non-stop words decreases.  This would indicate that when giving 5-star reviews, customers tend to be more positive, more subjective and use more descriptive i.e. less common words. 
 
 I was curious about this phenomenon so I decided to explore it a little more. One feature that was provided is the number of average stars given by a user and so I decided to use that to see if the same phenomenon continued to hold true for users based on their tendencies of giving stars. 
 <br>
-![Polarity by average number of stars](https://github.com/Jbrancazio/Yelp_Business_Analysis/tree/master/images/Yelp/Average_stars_scatterplot_polarity.png)![Subjectitiy by average number of stars](https://github.com/Jbrancazio/Yelp_Business_Analysis/tree/master/images/Yelp/Average_stars_scatterplot_subjectivity.png)
-![Non-stopwords Percentage by average numver of stars](https://github.com/Jbrancazio/Yelp_Business_Analysis/tree/master/images/Yelp/Average_stars_scatterplot_non_stop_percent.png)
+![Polarity by average number of stars](https://github.com/Jbrancazio/Yelp_Business_Analysis/blob/master/images/Yelp/Average_stars_scatterplot_polarity.png)![Subjectitiy by average number of stars](https://github.com/Jbrancazio/Yelp_Business_Analysis/blob/master/images/Yelp/Average_stars_scatterplot_subjectivity.png)
+![Non-stopwords Percentage by average numver of stars](https://github.com/Jbrancazio/Yelp_Business_Analysis/blob/master/images/Yelp/Average_stars_scatterplot_non_stop_percent.png)
 
 While the trends are not strong, there seems to be some pattern that users who on average give more stars, also tend to be more positive and use less common words. 
 
@@ -73,7 +73,7 @@ This question came out of exploration of the Gensim word2 vec model I created. I
 
 Below is an example of words that appear close to sandwhich. As you can see, the trigram model has successfully created some associations.
 <br>
-![Word2Vec most similar to sandwhich](https://github.com/Jbrancazio/Yelp_Business_Analysis/tree/master/images/Yelp/sandwhich.png)
+![Word2Vec most similar to sandwhich](https://github.com/Jbrancazio/Yelp_Business_Analysis/blob/master/images/Yelp/sandwhich.png)
 
 
 #### Are there any themes that emerge from the data and do those themes vary by number of stars?
@@ -84,13 +84,13 @@ I used gensim's LDA model to determine whether there were any themes in the revi
 As you can see from the graphs below, this attempt to create topics has been partially successful. Some topics, such as topic 0 seem to be too broad to really be useful. It seems to follow a restaurant theme however the word count is much larger than the associated weight which would indicate that those words do not hold as much importance as it would seem. Another great example of a topic that is too broad is topic 8.
 
 There are some topics though that seem to have been successfully learned. Topic 1 seems to refer to a pharmecy/doctors office, maybe with a dr. cox. Topic 2 refers to airlines and airports, likely allegiant. 
-![Graph of word count and importance](https://github.com/Jbrancazio/Yelp_Business_Analysis/tree/master/images/Yelp/yelp_keyword_graph.png)
+![Graph of word count and importance](https://github.com/Jbrancazio/Yelp_Business_Analysis/blob/master/images/Yelp/yelp_keyword_graph.png)
 
 ***Five Star Reviews***
 
 When looking at the topics within 5 star reviews, there seem to be less clarity. Topic 6 seems to refer to a donut, breakfast place and topic 9 is describing a barbershop. Topic 0 refers to good service and there are a few restaurant topics as well. 
 
-![Graph of word count and importance](https://github.com/Jbrancazio/Yelp_Business_Analysis/tree/master/images/Yelp/yelp_keyword_graph_5star.png)
+![Graph of word count and importance](https://github.com/Jbrancazio/Yelp_Business_Analysis/blob/master/images/Yelp/yelp_keyword_graph_5star.png)
 
 The next step for this model is t return to my text cleaner and remove words that have a significantly higher word count than their associated weights.
 
@@ -106,14 +106,14 @@ Supervised Learning Models:
     3. Random Forest Model: *44.19% (+/- 0.04548%)*
     4. Linear SVC Model: *66.64% (+/- 0.1989%)*
     
-![Model performance for text models](https://github.com/Jbrancazio/Yelp_Business_Analysis/tree/master/images/Yelp/MP_Text.png)
+![Model performance for text models](https://github.com/Jbrancazio/Yelp_Business_Analysis/blob/master/images/Yelp/MP_Text.png)
 
 2. Numerical Models
     1. Naive Bayes Model: *50.08% (+/- 0.3167%)*
     2. Logistical Regression Model: *53.46% (+/- 0.1023%)*
     3. Random Forest Model: *53.74% (+/- 0.1313%)*
     4. Linear SVC Model: *53.45% (+/- 0.08733%)*
-![Model performance for numerical models](https://github.com/Jbrancazio/Yelp_Business_Analysis/tree/master/images/Yelp/MP_Num.png)
+![Model performance for numerical models](https://github.com/Jbrancazio/Yelp_Business_Analysis/blob/master/images/Yelp/MP_Num.png)
     
 After completing these supervised models I attempted to see if I could improve my model performance by combining multiple models together. I started with a combination of the two Logistical Regression Models because they were quick and strong performers. I found that the best result on my test data came from a model that was based 100% on my text model and used no numerical data. 
  
