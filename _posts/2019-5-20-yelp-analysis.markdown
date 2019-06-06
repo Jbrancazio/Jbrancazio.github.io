@@ -51,6 +51,7 @@ The code can be found in the EDA jupyter notebook but the resulting graphs and f
 
 #### What is the breakdown of reviews given by customers?
 ![Countplot of Reviews by Stars given](https://github.com/Jbrancazio/Yelp_Business_Analysis/blob/master/images/Yelp/number_of_reviews.png)
+
 As you can see, there is a much larger amount of five star reviews than any other category. This will naturally skew the data a little towards the 5 star reviews due to the large number of samples, as well as splitting by stars given, we can over come this. 
 
 #### Is there a difference in language used based on the number of stars given? 
