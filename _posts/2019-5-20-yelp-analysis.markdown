@@ -4,9 +4,6 @@ title:      Yelp Review Analysis using NLP
 date:       2019-5-20 11:11:45 +0000
 permalink:  Yelp_Review_Analysis
 ---
-
-## Abstract
-
 The purpose of my capstone project is to showcase the skills I have learned in NLP, feature engineering and modeling through the exploration of yelp review data. I used the [yelp challenge dataset](https://www.yelp.com/dataset/challenge) for this project and focused on the user and review data. I will also be using the OSEMN process to organize my project. The [project](https://github.com/Jbrancazio/Yelp_Business_Analysis) and my [presentation](https://github.com/Jbrancazio/Yelp_Business_Analysis/blob/master/Capstone_Presentation.pdf) are uploaded on my [Github](https://github.com/Jbrancazio). 
 
 The main question I am trying to answer **there is an underlying relationship between the reviews members write on yelp and the resulting score given?** In order to answer this question, I plan on creating a model that not only uses the review information but also uses information about the user, and numerical information about the review itself. I will finish this project by obtaining new data and testing my pipleine and models on that data. 
