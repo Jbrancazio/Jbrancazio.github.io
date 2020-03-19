@@ -47,7 +47,7 @@ This is the most open ended part of the project and one of the most exciting asp
 The code can be found in the EDA jupyter notebook but the resulting graphs and findings are below. 
 
 #### What is the breakdown of reviews given by customers?
-![Countplot of Reviews by Stars given](https://github.com/Jbrancazio/Yelp_Business_Analysis/blob/master/images/Yelp/number_of_reviews.png)
+![Countplot of Reviews by Stars given](images/Yelp/number_of_reviews.png)
 
 As you can see, there is a much larger amount of five star reviews than any other category. This will naturally skew the data a little towards the 5 star reviews due to the large number of samples, as well as splitting by stars given, we can over come this. 
 
@@ -60,8 +60,9 @@ As you can see, there is some variance in the Polarity, Subjectitity and Percent
 
 I was curious about this phenomenon so I decided to explore it a little more. One feature that was provided is the number of average stars given by a user and so I decided to use that to see if the same phenomenon continued to hold true for users based on their tendencies of giving stars. 
 <br>
-![Polarity by average number of stars](https://github.com/Jbrancazio/Yelp_Business_Analysis/blob/master/images/Yelp/Average_stars_scatterplot_polarity.png)![Subjectitiy by average number of stars](https://github.com/Jbrancazio/Yelp_Business_Analysis/blob/master/images/Yelp/Average_stars_scatterplot_subjectivity.png)
-![Non-stopwords Percentage by average numver of stars](https://github.com/Jbrancazio/Yelp_Business_Analysis/blob/master/images/Yelp/Average_stars_scatterplot_non_stop_percent.png)
+![Polarity by average number of stars](https://www.github.com/Jbrancazio/Yelp_Business_Analysis/blob/master/images/Yelp/Average_stars_scatterplot_polarity.png)
+![Subjectitiy by average number of stars](https://www.github.com/Jbrancazio/Yelp_Business_Analysis/blob/master/images/Yelp/Average_stars_scatterplot_subjectivity.png)
+![Non-stopwords Percentage by average numver of stars](images/Yelp/Average_stars_scatterplot_non_stop_percent.png)
 
 While the trends are not strong, there seems to be some pattern that users who on average give more stars, also tend to be more positive and use less common words. 
 
