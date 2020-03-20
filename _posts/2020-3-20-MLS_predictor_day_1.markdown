@@ -13,3 +13,4 @@ Day one started yesterday where I build a [scraper](https://github.com/Jbrancazi
 I plan for this project to grow and change throughout so we will see where it leads. As long as it precicts and LAFC win. 
 
 
+
