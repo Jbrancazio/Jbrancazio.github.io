@@ -1,8 +1,8 @@
 ---
 layout: post
-title: MLS Predictor Project: Day 1
-date: 2020-3-20 11:50:45 +0000
-permalink: mls_predictor_day_one
+title:      MLS Predictor Project - Day 1
+date:       2020-3-20 11:50:45 +0000
+permalink:  Mls_predictor_day_one
 ---
 During the 2019 World Cup I decided to work on a predictor that could predict the outcome of the [Women's World Cup](https://github.com/Jbrancazio/fwwc_predictor). It worked fairly well, of course predicting a win for the USWNT. After that project I took a break for a while from projects as my real job starting taking over. Now however, I have found myself with some free time so I have decided to start working on another predictor. 
 
